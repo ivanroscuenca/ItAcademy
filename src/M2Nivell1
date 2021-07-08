@@ -1,0 +1,85 @@
+package itAcademyM2;
+
+import java.util.*;
+
+public class M2Nivell1 {
+
+	public static void main(String[] args) {
+		/* - Fase 1
+		Crea una taula (char[]) amb el teu nom on cada posició correspongui a una lletra. 
+		Fes un bucle que recorri aquesta taula i mostri per consola cadascuna de les lletres. */
+			
+			char [] array = {'i','v','a','n'};
+
+			for (int i =0; i<array.length;i++) {
+			System.out.println(array[i]);
+		}
+		/*- Fase 2
+		Canvia la taula per una llista (List<Character>) 
+		Al bucle, si la lletra és una vocal imprimeix a la consola: ‘VOCAL’. Sinó, imprimeix: ‘CONSONANT’. 
+		Si trobes un numero, mostra per pantalla: ‘Els noms de persones no contenen números!’. */
+			
+			ArrayList<Character>name = new ArrayList<Character>();
+
+			name.add('i');
+			name.add('v');
+			name.add('a');
+			name.add('n');
+			
+			       
+		for(int i=0; i<name.size(); i++) {
+		char lletra = name.get(i);
+			     
+		if(lletra=='a'|| lletra=='e' || lletra=='i' || lletra=='o' || lletra=='u') {
+		System.out.println("VOCAL");
+		}
+			     
+		else if(lletra=='0'|| lletra=='1' || lletra=='2' || lletra=='3' || lletra=='4' || lletra=='5' || lletra=='6' || lletra=='7'|| lletra=='8' || lletra=='9') {
+		System.out.println("Els noms de persones no contenen números!");
+			      }
+		         
+		else {
+		System.out.println("CONSONANT");
+		}
+	}
+			     
+	/*Fase 3
+	Emmagatzemar en un Map tant les lletres de la llista com el nombre de vegades que apareixen.
+	Has de recòrrer l'array anterior i anar comptant el número de vegades que apareix cada caràcter.*/
+			     			     
+		HashMap<Character,Integer> mapa = new HashMap<Character,Integer>();
+			     
+			     for(int i = 0; i < name.size(); i++) {
+			      char lletra = name.get(i);
+			      
+			      if (mapa.containsKey(lletra)) {
+			      mapa.put(lletra, mapa.get(lletra) + 1);
+			      }
+			      else {
+			    	  mapa.put(lletra, 1);     
+			      }
+			   
+			     }
+			     System.out.println(mapa);
+			     
+	/*FASE 4
+	Crea una altra llista amb el teu cognom on cada posició correspongui a una lletra. 
+	Fusiona les dues llistes en una sola.
+	A més, afegeix una posició amb un espai buit entre la primera i la segona. 
+	És a dir, partim de la llista name i surname i al acabar l’execució només tindrem una que es dirà fullName.*/
+			     
+			     ArrayList<Character>surname = new ArrayList<Character>();
+
+					surname.add('r');
+					surname.add('o');
+					surname.add('s');
+					
+				ArrayList<Character>fullName = new ArrayList<Character>();
+					
+					fullName.addAll(name);
+					fullName.add(' ');
+					fullName.addAll(surname);
+					
+				System.out.println(fullName);		     
+	}
+}
