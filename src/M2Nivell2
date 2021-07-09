@@ -1,0 +1,48 @@
+package itAcademyM2;
+
+import java.util.Scanner;
+
+public class M2Nivell2 {
+
+	public static void main(String[] args) {
+		
+	// Exercici dels Números	
+/*Crea una aplicació que dibuixi una escala de nombres, 
+sent cada línia nombres començant en un i acabant en el nombre de la línia.*/
+		
+	
+	Scanner entrada = new Scanner(System.in); 
+	
+	System.out.println("Introdueix numero de files :");
+	
+	int number = entrada.nextInt();
+	
+	String str = "";
+	
+		for(int i = 1; i <= number; i++) {
+		
+			str = str + i;
+	
+			System.out.println(str);
+			
+		}
+System.out.println("---------------------------------------------------------------------------------");
+		//Exerici dels astèriscs
+		/*Crea una aplicació que dibuixi una piràmide invertida de asteriscs. 
+		Nosaltres li vam passar l'altura de la piràmide per teclat.*/
+		
+		Scanner enter = new Scanner(System.in); 
+		
+		System.out.println("Introdueix numero de files de la piràmide :");
+		
+		int nombreFiles = enter.nextInt();
+		
+		for (int i = nombreFiles; i>=1; i--) {
+			for (int j =1; j<=i; j++) {
+				System.out.print("* ");
+			}
+			System.out.println();
+		
+        }
+    }
+}
