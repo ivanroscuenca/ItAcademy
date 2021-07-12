@@ -1,0 +1,136 @@
+package itAcademyM3;
+
+import java.util.*;
+public class M3Nivell1 {
+
+	public static void main(String[] args) {
+		 /*Fase 1
+		 Crea sis variables tipu string buides. 
+		 Demana per consola que s'introdueixin els noms.  
+		 Introdueix els següents noms de ciutats (Barcelona, Madrid, Valencia, Malaga, Cadis, Santander) per teclat. 
+		 Mostra per consola el nom de les 6 ciutats. */
+		
+		String ciutat1,ciutat2,ciutat3,ciutat4,ciutat5,ciutat6;
+		
+		Scanner entrada = new Scanner(System.in);
+		
+		System.out.println("Introdueix el nom de la primera ciutat : ");
+		ciutat1 = entrada.nextLine();
+		
+		System.out.println("Introdueix el nom de la segona ciutat : ");
+		ciutat2 = entrada.nextLine();
+		
+		System.out.println("Introdueix el nom de la tercera ciutat : ");
+		ciutat3 = entrada.nextLine();
+		
+		System.out.println("Introdueix el nom de la quarta ciutat : ");
+		ciutat4 = entrada.nextLine();
+		
+		System.out.println("Introdueix el nom de la cinquena ciutat : ");
+		ciutat5 = entrada.nextLine();
+	
+		System.out.println("Introdueix el nom de la sisena ciutat : ");
+		ciutat6 = entrada.nextLine();
+		
+		System.out.println("Les ciutats escollides son : " + ciutat1 + ", " + ciutat2 + ", " + ciutat3 + ", " + ciutat4 + ", " + ciutat5 + ", " + ciutat6 + "." );
+		
+		/*Fase2
+		Un cop tenim els noms de les ciutats guardats en variables haurem de pasar linformacio a un array (arrayCiutats). 
+		Quan tinguem l'array ple, haurem de mostrar per consola el nom de les ciutats ordenadas per ordre alfabetic. */
+		
+		String[] arrayCiutats = {ciutat1, ciutat2, ciutat3, ciutat4, ciutat5, ciutat6};
+
+		System.out.println( "Les ciutats escollides i ordenades alfabeticament son : ");
+        Arrays.sort(arrayCiutats);
+        for(int i = 0; i< arrayCiutats.length; i++) {
+            System.out.println(arrayCiutats[i]);
+        }
+        	
+		 /*Fase 3
+Cambieu les vocals "a" dels noms de les ciutats per el numero 4 i guardeu els noms modificats en un nou array(ArrayCiutatsModificades). 
+Mostreu per consola l'array modificat i ordenat per ordre alfabetic. */
+		 
+		 System.out.println( "Les ciutats escollides modificades son : ");
+		   
+		 String ciutat1Modificada=ciutat1.replaceAll("a","4");
+		 System.out.println(ciutat1Modificada);
+		 
+		 String ciutat2Modificada=ciutat2.replaceAll("a","4");
+		 System.out.println(ciutat2Modificada);
+		 
+		 String ciutat3Modificada=ciutat3.replaceAll("a","4");
+		 System.out.println(ciutat3Modificada);
+		 
+		 String ciutat4Modificada=ciutat4.replaceAll("a","4");
+		 System.out.println(ciutat4Modificada);
+		 
+		 String ciutat5Modificada=ciutat5.replaceAll("a","4");
+		 System.out.println(ciutat5Modificada);
+		 
+		 String ciutat6Modificada=ciutat6.replaceAll("a","4");
+		 System.out.println(ciutat6Modificada);
+		
+		 String[]arrayCiutatsModificades = {ciutat1Modificada, ciutat2Modificada, ciutat3Modificada, ciutat4Modificada, ciutat5Modificada, ciutat6Modificada};
+		 
+		System.out.println( "Les ciutats escollides, modificades i ordenades alfabeticament son : ");
+			
+			Arrays.sort(arrayCiutatsModificades);
+			 for (String ciutatsModificadesOrdenades : arrayCiutatsModificades) {
+			      System.out.println(ciutatsModificadesOrdenades);
+			    }
+				 
+			 /*Fase 4
+			 Creeu un nou array de caràcters (char array[])per cada una de les ciutats que tenim. 
+			 La mida dels nous arrays sera la llargada de cada string ( string nomCiutat.Length).  
+			 Ompliu els nous arrays lletra per lletra. 
+			 Mostreu per consola els nous arrays amb els noms invertits (Ex: Barcelona - anolecraB).*/
+			 System.out.println( "Les ciutats escollides amb els noms al revès");
+			 
+			    System.out.print(ciutat1 + " - ");
+			 char[] charCiutat1=ciutat1.toCharArray();    
+			 for(int i=charCiutat1.length-1;i>=0;i--){    
+				 System.out.print(charCiutat1[i]);   
+				 }  
+			 
+			 System.out.println();
+			
+			 System.out.print(ciutat2 + " - ");
+			 char[] charCiutat2=ciutat2.toCharArray();    
+			 for(int i=charCiutat2.length-1;i>=0;i--){    
+				 System.out.print(charCiutat2[i]);   
+				 }  
+			 
+			 System.out.println();
+			 
+			 System.out.print(ciutat3 + " - ");
+			 char[] charCiutat3=ciutat3.toCharArray();    
+			 for(int i=charCiutat3.length-1;i>=0;i--){    
+				 System.out.print(charCiutat3[i]);   
+				 }  
+			 
+			 System.out.println(); 
+			 
+			 System.out.print(ciutat4 + " - ");
+			 char[] charCiutat4=ciutat4.toCharArray();    
+			 for(int i=charCiutat4.length-1;i>=0;i--){    
+				 System.out.print(charCiutat4[i]);   
+				 }  
+			 
+			 System.out.println(); 
+			 
+			 System.out.print(ciutat5 + " - ");
+			 char[] charCiutat5=ciutat5.toCharArray();    
+			 for(int i=charCiutat5.length-1;i>=0;i--){    
+				 System.out.print(charCiutat5[i]);   
+				 }  
+		
+			 System.out.println();
+			 
+			 System.out.print(ciutat6 + " - ");
+			 char[] charCiutat6=ciutat6.toCharArray();    
+			 for(int i=charCiutat6.length-1;i>=0;i--){    
+				 System.out.print(charCiutat6[i]);   
+				 }  
+			  
+			}
+	}
