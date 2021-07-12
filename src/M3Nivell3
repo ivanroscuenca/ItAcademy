@@ -1,0 +1,30 @@
+package itAcademyM3;
+
+import java.util.Scanner;
+
+public class m3Nivell3 {
+
+	public static void main(String[] args) {
+		
+		Scanner entrada = new Scanner(System.in);
+		
+		System.out.println("Introdueix el nombre d'elements de la serie Fibonacci: ");
+		int serie = entrada.nextInt();
+		
+		int num1 = 0, num2 = 1, suma = 1;
+
+        System.out.print(num1 + ",");
+        
+        for (int i = 1; i < serie; i++) {
+            
+            System.out.print(suma + ",");
+
+            suma = num1 + num2;
+   
+            num1 = num2;
+
+            num2 = suma;
+        	}
+    	}
+			
+	}
