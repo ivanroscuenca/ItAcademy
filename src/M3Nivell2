@@ -1,0 +1,133 @@
+package itAcademyM3;
+
+import javax.swing.*;
+
+public class M3Nivell2 {
+
+	public static void main(String[] args) {
+		/*Nivell 2
+		En aquest exercici crearàs un array bidimensional on introduiràs 3 notes per a 5 alumnes. 
+		Es calcularà la nota mitjana de cada alumna i s'indicarà si han suspès o no. 
+		Crea un array bidimensional capaç de guardar 3 notes de 5 alumnes. 
+		Omple l’array amb un bucle demanant els valors per pantalla (nota entre 0 i 10), 
+		has d’identificar per pantalla quan és una agrupació d’un alumne nou .
+		Recorre l'array, fes la Mitjana aritmètica de les 3 notes i indica si l'alumne ha aprovat o suspès*/
+				
+		double[][] arrayBiNotes =  new double[5][3];
+		
+		arrayBiNotes[0][0] = 0;
+		arrayBiNotes[0][1] = 0;
+		arrayBiNotes[0][2] = 0;
+		
+		arrayBiNotes[1][0] = 0;
+		arrayBiNotes[1][1] = 0;
+		arrayBiNotes[1][2] = 0;
+		
+		arrayBiNotes[2][0] = 0;
+		arrayBiNotes[2][1] = 0;
+		arrayBiNotes[2][2] = 0;
+		
+		arrayBiNotes[3][0] = 0;
+		arrayBiNotes[3][1] = 0;
+		arrayBiNotes[3][2] = 0;
+		
+		arrayBiNotes[4][0] = 0;
+		arrayBiNotes[4][1] = 0;
+		arrayBiNotes[4][2] = 0;
+		
+		
+		Double Alumno1Nota1=Double.parseDouble(JOptionPane.showInputDialog("Alumne 1, introdueix la primera nota"));
+		if (Alumno1Nota1 < 0 || Alumno1Nota1 > 10) {
+			System.out.println("Error: heu d'introduir un número entre 0 i 10");
+			arrayBiNotes[0][0] =Alumno1Nota1;
+		}
+		
+		Double Alumno1Nota2=Double.parseDouble(JOptionPane.showInputDialog("Alumne 1, introdueix la segona nota"));
+		arrayBiNotes[0][1] =  Alumno1Nota2;
+
+		Double Alumno1Nota3=Double.parseDouble(JOptionPane.showInputDialog("Alumne 1, introdueix la tercera nota"));
+		arrayBiNotes[0][2] = Alumno1Nota3;
+		
+		Double Alumno2Nota1=Double.parseDouble(JOptionPane.showInputDialog("Alumne 2 , introdueix la primera nota"));
+		arrayBiNotes[1][0] = Alumno2Nota1;
+		
+		Double Alumno2Nota2=Double.parseDouble(JOptionPane.showInputDialog("Alumne 2 ,introdueix la segona nota"));
+		arrayBiNotes[1][1] =  Alumno2Nota2;
+		
+		Double Alumno2Nota3=Double.parseDouble(JOptionPane.showInputDialog("Alumne 2 , introdueix la tercera nota"));
+		arrayBiNotes[1][2] = Alumno2Nota3;
+		
+		Double Alumno3Nota1=Double.parseDouble(JOptionPane.showInputDialog("Alumne 3 ,introdueix la primera nota"));
+		arrayBiNotes[2][0] = Alumno3Nota1;
+		
+		Double Alumno3Nota2=Double.parseDouble(JOptionPane.showInputDialog("Alumne 3 , introdueix la segona nota"));
+		arrayBiNotes[2][1] =  Alumno3Nota2;
+		
+		Double Alumno3Nota3=Double.parseDouble(JOptionPane.showInputDialog("Alumne 3 , introdueix la tercera nota"));
+		arrayBiNotes[2][2] =  Alumno3Nota3;
+		
+		Double Alumno4Nota1=Double.parseDouble(JOptionPane.showInputDialog("Alumne 4 , introduce la primera nota"));
+		arrayBiNotes[3][0] = Alumno4Nota1;
+		
+		Double Alumno4Nota2=Double.parseDouble(JOptionPane.showInputDialog("Alumne 4 , introduce la segona nota"));
+		arrayBiNotes[3][1] = Alumno4Nota2;
+		
+		Double Alumno4Nota3=Double.parseDouble(JOptionPane.showInputDialog("Alumne 4 , introduce la tercera nota"));
+		arrayBiNotes[3][2] = Alumno4Nota3;
+		
+		Double Alumno5Nota1=Double.parseDouble(JOptionPane.showInputDialog("Alumne 5 , introduce la primera nota"));
+		arrayBiNotes[4][0] = Alumno5Nota1;
+		
+		Double Alumno5Nota2=Double.parseDouble(JOptionPane.showInputDialog("Alumne 5 , introduce la segona nota"));
+		arrayBiNotes[4][1] = Alumno5Nota2;
+		
+		Double Alumno5Nota3=Double.parseDouble(JOptionPane.showInputDialog("Alumne 5 , introduce la tercera nota"));
+		arrayBiNotes[4][2] = Alumno5Nota3;
+		
+		System.out.println();
+		
+		double Alumno1NotaMedia = (Alumno1Nota1+Alumno1Nota2+Alumno1Nota3)/3;
+		System.out.print(" La mitjana de l'alumne 1 és : " + Alumno1NotaMedia);
+		if (Alumno1NotaMedia<5) {
+			System.out.println(" Has suspès ");
+		}
+			else {
+				System.out.println(" Has aprovat");
+		}
+		double Alumno2NotaMedia = (Alumno2Nota1+Alumno2Nota2+Alumno2Nota3)/3;
+		System.out.print(" La mitjana de l'alumne 2 és : " + Alumno2NotaMedia);
+		if (Alumno2NotaMedia<5) {
+			System.out.println(" Has suspès ");
+		}
+			else {
+				System.out.println(" Has aprovat");
+		}
+		
+		double Alumno3NotaMedia = (Alumno3Nota1+Alumno3Nota2+Alumno3Nota3)/3;
+		System.out.print(" La mitjana de l'alumne 3 és  : " + Alumno3NotaMedia);
+		if (Alumno3NotaMedia<5) {
+			System.out.println(" Has suspès ");
+		}
+			else {
+				System.out.println(" Has aprovat");
+		}
+		
+		double Alumno4NotaMedia = (Alumno4Nota1+Alumno4Nota2+Alumno4Nota3)/3;
+		System.out.print(" La mitjana de l'alumne 4 és  : " + Alumno4NotaMedia);
+		if (Alumno4NotaMedia<5) {
+			System.out.println(" Has suspès ");
+		}
+			else {
+				System.out.println(" Has aprovat");
+		}
+		
+		double Alumno5NotaMedia = (Alumno5Nota1+Alumno5Nota2+Alumno5Nota3)/3;
+		System.out.print(" La mitjana de l'alumne 5 és  : " + Alumno5NotaMedia);
+		if (Alumno5NotaMedia<5) {
+			System.out.println(" Has suspès ");
+		}
+			else {
+				System.out.println(" Has aprovat");
+		}
+	}
+}
