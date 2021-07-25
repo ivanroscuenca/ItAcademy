@@ -1,0 +1,133 @@
+import java.util.*;
+
+import javax.swing.JOptionPane;
+
+public class M4Nivell2 {
+
+private static final boolean NumberFormatException = false;
+
+public static void main(String[] args) {
+
+/*NIVELL 2
+Revisaràs l'exercici anterior modificant-lo per afegir noves excepcions més adients.
+Modifica la revisió de la comanda de la següent manera: si un usuari introdueix un plat que no existeix,
+inmediatament executa una excepció general (new Exception) per avisar que el producte no existeix,
+per tant no s'ha d'afegir a la llista,però el bucle ha de seguir executant-se.  
+Llança una excepció general (new Exception) a la pregunta Si/No per seguir demanant, en cas de que l'usuari no introdueixi cap de les paraules clau.
+S'ha de tornar a preguntar si es vol seguir demanant o no.*/
+
+int cash1, cash2, cash5,cash10, cash20,cash50,cash100,cash200,cash500;
+
+
+int preuTotal=0;
+
+
+String [] plats  = new String[10];
+
+int[] preus = new int [10];
+
+LinkedHashMap<String, Integer> preuPlat = new LinkedHashMap <String, Integer>();
+
+preuPlat.put("LASAGNA", 10);
+preuPlat.put("GNOCCHI", 10);
+preuPlat.put("AMATRICIANA", 12);
+preuPlat.put("SPAGHETTI", 12);
+preuPlat.put("CARBONARA", 12);
+preuPlat.put("PESTO", 13);
+preuPlat.put("RAVIOLI", 13);
+preuPlat.put("PIZZA FRUTTI DI MARE", 15);
+preuPlat.put("PIZZA MARGHERITA", 15);
+preuPlat.put("PIZZA VEGETALE", 15);
+
+int contador=0;
+
+ for (Map.Entry<String, Integer> entry : preuPlat.entrySet()) {
+  plats[contador]=entry.getKey();
+  preus[contador]=entry.getValue();
+  contador++;
+ }
+
+
+System.out.println("=====================================================");
+
+System.out.println(" Bienvenutti al Ristorante Il capo della Cosa Nostra ");
+
+System.out.println("=====================================================");
+
+
+for (String carta : preuPlat.keySet()) {
+   System.out.println("Plat: " + carta + " - Preu : " + preuPlat.get(carta) + " Euros");
+ }
+
+
+ArrayList<String> platsDemanats = new ArrayList<String>();
+boolean continuar;
+
+do {
+String lectura=JOptionPane.showInputDialog("Quin plat voleu del nostre Menú?").toUpperCase();
+       
+if (preuPlat.keySet().contains(lectura)) {
+try {
+System.out.println("El vostre producte està a la carta");
+platsDemanats.add(lectura.toUpperCase());
+} catch (Exception e) {
+System.out.println("El vostre producte no hi és a la carta");
+}
+}try { continuar = (Integer.parseInt(JOptionPane.showInputDialog("Voleu alguna cosa mès del nostre Menú? 1: Sí / 0: No")) == 1);
+} catch (NumberFormatException e) { continuar = false; }
+} while( continuar );
+System.out.println("Moltes gràcies per la comanda");
+
+
+System.out.println("Els plats demanats son els següents :" + platsDemanats);
+
+
+for (String carta : preuPlat.keySet()) {
+  for (String z : platsDemanats) {
+    if (carta.contains(z)) {
+  preuTotal+= preuPlat.get(carta);
+    }  
+ }
+  } System.out.println("El preu total de la vostra comanda es : " + preuTotal + " Euros");
+
+
+System.out.println("Haureu de pagar de la següent manera : " );
+
+  cash500 = preuTotal/500;
+  System.out.println(cash500 + " Bitllets de 500");
+  preuTotal%=500;
+ 
+  cash200 = preuTotal/200;
+  System.out.println(cash200 + " Bitllets de 200");
+  preuTotal%=200;
+ 
+  cash100 = preuTotal/100;
+  System.out.println(cash100 + " Bitllets de 100");
+  preuTotal%=100;
+ 
+  cash50 = preuTotal/50;
+  System.out.println(cash50 + " Bitllets de 50");
+  preuTotal%=50;
+ 
+  cash20 = preuTotal/20;
+  System.out.println(cash20 + " Bitllets de 20");
+  preuTotal%=20;
+ 
+  cash10 = preuTotal/10;
+  System.out.println(cash10 + " Bitllets de 10");
+  preuTotal%=10;
+ 
+  cash5 = preuTotal/5;
+  System.out.println(cash5 + " Bitllets de 5");
+  preuTotal%=5;
+ 
+  cash2 = preuTotal/2;
+  System.out.println(cash2 + " moneda de 2");
+  preuTotal%=2;
+ 
+  cash1 = preuTotal/1;
+  System.out.println(cash1 + " moneda de 1");
+  preuTotal%=1;
+
+}
+}
