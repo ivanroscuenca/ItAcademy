@@ -1,0 +1,153 @@
+import java.util.*;
+
+import javax.swing.*;
+
+public class M4Nivell1 {
+
+public static void main(String[] args) {
+//Nivell 1 Fase 1
+
+//Creeu una variable int per cada un dels bitllets i/o monedes que existeixen des de 1€ a 500€.
+int cash1, cash2, cash5,cash10, cash20,cash50,cash100,cash200,cash500;
+
+//Haureu de crear una altra variable per guardar el preu total del menjar.
+int preuTotal=0;
+
+//Creeu dos arrays, un on guardarem el menú i un altre on guardarem el preu de cada plat
+String [] plats  = new String[10];
+
+int[] preus = new int [10];
+
+//Fase 2
+//Haurem d’omplir els dos arrays anteriorment creats, afegint el nom del plat i després el preu. Es pot fer de dues formes:  
+//Es pot fer us d'un diccionari de dades precarregat (Java HashMap) o amb un bucle demanant les dades a l'usuari.
+
+
+LinkedHashMap<String, Integer> preuPlat = new LinkedHashMap <String, Integer>();
+
+preuPlat.put("LASAGNA", 10);
+preuPlat.put("GNOCCHI", 10);
+preuPlat.put("AMATRICIANA", 12);
+preuPlat.put("SPAGHETTI", 12);
+preuPlat.put("CARBONARA", 12);
+preuPlat.put("PESTO", 13);
+preuPlat.put("RAVIOLI", 13);
+preuPlat.put("PIZZA FRUTTI DI MARE", 15);
+preuPlat.put("PIZZA MARGHERITA", 15);
+preuPlat.put("PIZZA VEGETALE", 15);
+
+//Un cop plens els dos arrays haurem de mostrar-los i preguntar que es vol per menjar, guardarem la informació en una List.
+//Haurem de preguntar si es vol seguir demanant menjar. Podeu fer servir el sistema (1:Si / 0:No),
+//per tant haureu de crear un altre variable int per guardar la informació. */
+
+int contador=0;
+
+ for (Map.Entry<String, Integer> entry : preuPlat.entrySet()) {
+  plats[contador]=entry.getKey();
+  preus[contador]=entry.getValue();
+  contador++;
+ }
+
+// Pantalla d'introducció al nostre restaurant italià
+System.out.println("=====================================================");
+
+System.out.println(" Bienvenutti al Ristorante Il capo della Cosa Nostra ");
+
+System.out.println("=====================================================");
+
+//For each per llegir la carta del HashMap
+for (String carta : preuPlat.keySet()) {
+   System.out.println("Plat: " + carta + " - Preu : " + preuPlat.get(carta) + " Euros");
+ }
+
+boolean sortir=false;
+
+String lectura=JOptionPane.showInputDialog("Quin plat voleu del nostre Menú?");
+
+ArrayList<String> platsDemanats = new ArrayList<String>();
+platsDemanats.add(lectura.toUpperCase());
+
+
+
+int lectura2=Integer.parseInt(JOptionPane.showInputDialog("Voleu alguna cosa mès del nostre Menú? 1: Sí / 0: No"));
+ 
+switch (lectura2) {
+  case 0 :
+  System.out.println("Moltes gràcies per la comanda");
+  sortir=true;
+  break;
+ 
+  case 1:
+   do {
+   lectura=JOptionPane.showInputDialog("Quin plat voleu del nostre Menú?");
+      platsDemanats.add(lectura.toUpperCase());
+      lectura2=Integer.parseInt(JOptionPane.showInputDialog("Voleu alguna cosa mès del nostre Menú? 1: Sí / 0: No"));
+     } while (lectura2==1);
+     break;
+   
+   default :
+    System.out.println("La opció escollida es incorrecta");
+    lectura2=Integer.parseInt(JOptionPane.showInputDialog("Voleu alguna cosa mès del nostre Menú? 1: Sí / 0: No"));
+}
+
+System.out.println("Els plats demanats son els següents :" + platsDemanats);
+
+ /*Fase 3
+ Un cop hem acabat de demanar el menjar, haurem de comparar la llista amb l’array que hem fet al principi.
+ En el cas que la informació que hem introduït a la List coincideixi amb la del array,
+ haurem de sumar el preu del producte demanat; en el cas contrari haurem de mostrar un missatge que digui que el producte que hem demanat no existeix.
+ Finalment mostrarem el preu total de la comanda i els bitllets/monedes amb les quals s'hauria de pagar */
+
+for (String carta : preuPlat.keySet()) {
+  for (String z : platsDemanats) {
+    if (carta.contains(z)) {
+  preuTotal+= preuPlat.get(carta);
+    }  
+ }
+  } System.out.println("El preu total de la vostra comanda es : " + preuTotal);
+
+
+
+System.out.println("Haureu de pagar de la següent manera : " );
+
+  cash500 = preuTotal/500;
+  System.out.println(cash500 + " Bitllets de 500");
+  preuTotal%=500;
+ 
+  cash200 = preuTotal/200;
+  System.out.println(cash200 + " Bitllets de 200");
+  preuTotal%=200;
+ 
+  cash100 = preuTotal/100;
+  System.out.println(cash100 + " Bitllets de 100");
+  preuTotal%=100;
+ 
+  cash50 = preuTotal/50;
+  System.out.println(cash50 + " Bitllets de 50");
+  preuTotal%=50;
+ 
+  cash20 = preuTotal/20;
+  System.out.println(cash20 + " Bitllets de 20");
+  preuTotal%=20;
+ 
+  cash10 = preuTotal/10;
+  System.out.println(cash10 + " Bitllets de 10");
+  preuTotal%=10;
+ 
+  cash5 = preuTotal/5;
+  System.out.println(cash5 + " Bitllets de 5");
+  preuTotal%=5;
+ 
+  cash2 = preuTotal/2;
+  System.out.println(cash2 + " moneda de 2");
+  preuTotal%=2;
+ 
+  cash1 = preuTotal/1;
+  System.out.println(cash1 + " moneda de 1");
+  preuTotal%=1;
+ 
+ 
+
+}
+
+}
